@@ -1,0 +1,35 @@
+ruby:
+  photo_url = resource.persisted? ? admin_item_photos_path(resource) : photos_admin_items_path
+
+= semantic_form_for [:admin, resource], builder: ActiveAdmin::FormBuilder do |f|
+  = f.semantic_errors :translations
+
+  - f.object.all_translations.each do |locale, translation|
+    = f.inputs :name => "#{locale.to_s.upcase} translation" do
+      = f.semantic_fields_for :translations, translation do |ft|
+        = ft.input :locale, as: :hidden
+        = ft.input :name
+        = ft.input :description, input_html: {rows: 4}
+
+  = f.inputs do
+    = f.input :price
+    = f.input :condition, as: :select, collection: Condition.all.map { |v| [v.name, v.id] }
+    = f.input :category, as: :select, collection: Category.all.map { |v| [v.name, v.id] }
+
+  = f.inputs do
+    li.upload{data-url=photo_url}
+      ul.upload__list
+        - @photos.each do |photo|
+          li.upload__list__item
+            - if resource.persisted?
+              = link_to '', admin_item_photo_path(resource, photo), method: :delete, remote: true, data: {confirm: 'Sure?'}, class: 'upload__list__item__delete'
+            = image_tag photo.file.url(:small)
+      a.button.upload__button
+        .upload__button__text Upload
+        = file_field_tag '', class: 'upload__button__file', multiple: true
+
+      .upload__drop
+        .upload__drop__text Drop a files here
+
+  = f.inputs do
+    = f.action :submit

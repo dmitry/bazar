@@ -1,0 +1,11 @@
+= semantic_form_for [:admin, resource], builder: ActiveAdmin::FormBuilder do |f|
+  = f.semantic_errors :translations
+
+  - f.object.all_translations.each do |locale, translation|
+    = f.inputs :name => "#{locale.to_s.upcase} translation" do
+      = f.semantic_fields_for :translations, translation do |ft|
+        = ft.input :locale, as: :hidden
+        = ft.input :name
+
+  = f.inputs do
+    = f.action :submit
