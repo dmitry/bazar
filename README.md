@@ -1,3 +1,3 @@
-# bazar
+# Bazar
 
-Bazar - sell your unused items
+A marketplace to sell your unused items.

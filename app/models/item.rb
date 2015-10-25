@@ -20,7 +20,9 @@ class Item < ActiveRecord::Base
   validates :price, numericality: {:>= => 0, only_integer: true}
 
 
+  scope :recent, -> { order('created_at DESC') }
+
   def general_photo
-    photos.first
+    photos.first || Photo.new
   end
 end

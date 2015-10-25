@@ -19,7 +19,7 @@ $(function() {
       }, function (files, rejected) {
         if (files.length) {
           FileAPI.each(files, function (file) {
-            FileAPI.Image(file).preview(128).get(function (err, img) {
+            FileAPI.Image(file).preview(120, 90).get(function (err, img) {
               var id = FileAPI.uid(file);
               var item = $('<div class="upload__list__item upload__list__item--incompleted" id="' + id + '" />');
               item.append(img);

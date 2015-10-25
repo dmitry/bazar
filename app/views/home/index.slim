@@ -1,0 +1,18 @@
+.container
+  ul.items
+    - @items.each do |item|
+      li.items__item
+        = link_to item, class: 'items__item__photo' do
+          = image_tag item.general_photo.file.url(:small), class: 'items__item__photo__image'
+
+        .items__item__primary
+          = link_to item, class: 'items__item__primary__name' do
+            = item.name
+          .items__item__primary__condition
+            = item.condition
+        .items__item__category
+          = item.category
+        .items__item__price
+          = item.price
+        .items__item__date
+          = item.published_date_at
