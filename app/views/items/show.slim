@@ -1,0 +1,7 @@
+.item__name= @item.name
+.item__description= @item.description
+.item__category= @item.category
+.item__condition= @item.condition
+.item__photos
+  - @item.photos.each do |photo|
+    .item__photos__photo= image_tag photo.file.url(:medium)
