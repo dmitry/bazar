@@ -40,4 +40,7 @@ set :bundle_jobs, 1
 
 set :rvm_ruby_version, '2.2.3'
 
+set :migration_role, :app
+set :assets_roles, :app
+
 # set :passenger_restart_with_touch, false
