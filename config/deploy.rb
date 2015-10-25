@@ -15,7 +15,8 @@ set :scm, :git
 
 set :linked_files, fetch(:linked_files, []).push(
                    'config/database.yml',
-                   'config/secrets.yml'
+                   'config/secrets.yml',
+                   'db/production.sqlite3'
                  )
 
 set :linked_dirs, fetch(:linked_dirs, []).
