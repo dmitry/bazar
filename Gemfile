@@ -39,4 +39,6 @@ group :development do
 
   gem 'web-console', '~> 2.0'
   gem 'spring'
+
+  gem 'guard-livereload', '~> 2.4', require: false
 end
