@@ -1,0 +1,33 @@
+es:
+  activerecord:
+    attributes:
+      enquiry:
+        name: ~
+        email: ~
+        phone: ~
+        message: ~
+  helpers:
+    submit:
+      enquiry:
+        create: ~
+  common:
+    please_wait: ~
+    slogan: ~
+  enquiries:
+    enquiry:
+      header: ~
+      sent_header: ~
+      sent_description: ~
+  simple_form:
+    "yes": ~
+    "no": ~
+    required:
+      text: ~
+      mark: ~
+    error_notification:
+      default_message: ~
+  layouts:
+    application:
+      header:
+        sell: ~
+        for_free: ~

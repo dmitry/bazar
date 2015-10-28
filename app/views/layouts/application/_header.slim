@@ -1,13 +1,13 @@
 header.header
   .container
-    = link_to root_path, class: 'header__logo' do
+    = link_to root_path, class: 'header__logo', title: t('common.slogan') do
       | Tenerife
       span.header__logo__last r.com
 
 
 
     = link_to '#', class: 'header__advert' do
-      | Sell your item
+      = t('.sell')
       span.header__advert__free
         span.header__advert__free__text
-          | For free
+          = t('.for_free')

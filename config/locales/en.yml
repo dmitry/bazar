@@ -12,6 +12,7 @@ en:
         create: Contact
   common:
     please_wait: Please wait...
+    slogan: A marketplace to sell your unused items.
   enquiries:
     enquiry:
       header: Contact now
@@ -25,3 +26,8 @@ en:
       mark: '*'
     error_notification:
       default_message: "Please review the problems below:"
+  layouts:
+    application:
+      header:
+        sell: Sell your item
+        for_free: For free

@@ -1,0 +1,33 @@
+ru:
+  activerecord:
+    attributes:
+      enquiry:
+        name: Имя
+        email: "Электронная почта"
+        phone: "Номер телефона"
+        message: Сообщение
+  helpers:
+    submit:
+      enquiry:
+        create: Связаться
+  common:
+    please_wait: "Пожалуйста подождите..."
+    slogan: "Рынок по продаже больше неиспользуемых вами вещей."
+  enquiries:
+    enquiry:
+      header: "Связаться с продавцом"
+      sent_header: "Ваш запрос отправлен"
+      sent_description: "Продавец в скором времени получит ваше сообщение. Вы получите ответ по электронной почте или телефону."
+  simple_form:
+    "yes": Да
+    "no": Нет
+    required:
+      text: требуется
+      mark: "*"
+    error_notification:
+      default_message: "Пожалуйста, проверьте проблемы:"
+  layouts:
+    application:
+      header:
+        sell: "Продайте вашу вещь"
+        for_free: Бесплатно
