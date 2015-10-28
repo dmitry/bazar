@@ -26,6 +26,9 @@ gem 'magnific-popup-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 
+gem 'kramdown'
+gem 'sanitize'
+
 gem 'rails-i18n'
 gem 'devise-i18n'
 
