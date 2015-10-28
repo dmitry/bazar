@@ -1,7 +1,28 @@
-.item__name= @item.name
-.item__description= @item.description
-.item__category= @item.category
-.item__condition= @item.condition
-.item__photos
-  - @item.photos.each do |photo|
-    .item__photos__photo= image_tag photo.file.url(:medium)
+.container
+  .item
+    .item__header
+      .item__header__price
+        = @item.price
+      h1.item__header__name
+        = @item.name
+
+    .item__subheader
+      .item__subheader__condition
+        = @item.condition
+      .item__subheader__info
+        span.item__subheader__info__category= @item.category
+        span.item__subheader__info__date= @item.published_date_at
+
+    = link_to @item.main_photo.file.url(:large), class: 'item__photo' do
+      = image_tag @item.main_photo.file.url(:medium), class: 'item__photo__image'
+
+    .item__description
+      = @item.description
+
+    - if @item.photos.size > 1
+      .item__photos
+        - @item.photos.each do |photo|
+          = link_to photo.file.url(:large), class: 'item__photos__photo' do
+            = image_tag photo.file.url(:small), class: 'item__photos__photo__image'
+
+  = render @enquiry

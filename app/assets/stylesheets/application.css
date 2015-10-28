@@ -1,4 +1,5 @@
 /*
  *= require normalize
- *= require_tree ./application
+ *= require magnific-popup
+ *= require ./application/base
  */

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024152623) do
+ActiveRecord::Schema.define(version: 20151028111300) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,6 +35,16 @@ ActiveRecord::Schema.define(version: 20151024152623) do
   add_index "condition_translations", ["condition_id", "locale"], name: "index_condition_translations_on_condition_id_and_locale", unique: true
 
   create_table "conditions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "enquiries", force: :cascade do |t|
+    t.integer  "item_id",    null: false
+    t.string   "name"
+    t.string   "email",      null: false
+    t.string   "phone"
+    t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

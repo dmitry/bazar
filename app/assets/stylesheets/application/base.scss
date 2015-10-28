@@ -1,41 +1,14 @@
-@import 'media-queries';
+@import "bourbon";
+@import "grid_settings";
+@import "neat";
+@import 'fonts';
 
-body {
-  @include respond-to(mobile) {
-    min-width: 100%;
-  }
-  @include respond-to(tablet) {
-    min-width: $break-small - 30;
-  }
-  @include respond-to(desktop) {
-    min-width: $break-large - 30;
-  }
-}
-
-.container {
-  margin: 0 auto;
-
-  @include respond-to(mobile) {
-    width: 100%;
-    padding: 0 5px;
-    box-sizing: border-box;
-  }
-  @include respond-to(tablet) {
-    width: 100%;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-  @include respond-to(desktop) {
-    width: $break-large - 30;
-  }
-}
-
-a {
-  text-decoration: none;
-  color: #0030bb;
-
-  &:hover {
-    text-decoration: underline;
-    color: #0030bb;
-  }
-}
+@import 'buttons';
+@import 'alerts';
+@import 'form';
+@import 'main';
+@import 'home';
+@import 'header';
+@import 'items';
+@import 'item';
+@import 'enquiry';

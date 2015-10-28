@@ -1,0 +1,12 @@
+.enquiry {
+  background: #fff;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+
+  @include span-columns(4);
+
+  &__header {
+    margin: 0 0 15px;
+  }
+
+}

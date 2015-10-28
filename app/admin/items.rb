@@ -33,8 +33,8 @@ ActiveAdmin.register Item do
     id_column
 
     column class: 'col-photo' do |p|
-      if p.general_photo && p.general_photo.file?
-        link_to image_tag(p.general_photo.file.url(:small), size: '64x64'), edit_admin_item_path(p)
+      if p.main_photo && p.main_photo.file?
+        link_to image_tag(p.main_photo.file.url(:small), size: '64x64'), edit_admin_item_path(p)
       end
     end
 

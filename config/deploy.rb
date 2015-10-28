@@ -1,3 +1,5 @@
+require 'capistrano-db-tasks'
+
 lock '3.4.0'
 
 set :application, 'dmitry'
@@ -43,5 +45,10 @@ set :rvm_ruby_version, '2.2.3'
 
 set :migration_role, :app
 set :assets_roles, :app
+
+# https://github.com/sgruhier/capistrano-db-tasks
+set :assets_dir, 'public/system'
+set :local_assets_dir, 'public/system'
+set :disallow_pushing, true
 
 # set :passenger_restart_with_touch, false

@@ -6,8 +6,10 @@ gem 'sqlite3'
 gem 'paperclip'
 gem 'has_translations'
 gem 'paper_trail'
+gem 'email_validator'
 
 gem 'draper'
+gem 'simple_form'
 
 gem 'slim-rails'
 gem 'sass-rails', '~> 5.0'
@@ -17,6 +19,9 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'bourbon'
+gem 'neat'
+gem 'magnific-popup-rails'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
@@ -32,6 +37,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano-passenger'
+  gem 'capistrano-db-tasks', require: false
 
   gem 'quiet_assets'
 

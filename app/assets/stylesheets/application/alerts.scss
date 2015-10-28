@@ -1,0 +1,16 @@
+.alerts {
+  padding: 10px 20px;
+
+  &__header {
+    font-size: 22px;
+    margin: 0 0 10px;
+  }
+
+  &__description {
+    font-size: 15px
+  }
+
+  &--success {
+    background: #E5FCDE;
+  }
+}

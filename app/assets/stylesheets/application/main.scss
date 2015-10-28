@@ -1,0 +1,49 @@
+body {
+  margin-top: 70px;
+  background: #f7f7f7;
+
+  min-width: $max-width - 30;
+
+  //@include media($mobile) {
+  //  min-width: $mobile-width - 30;
+  //}
+  //@include media($tablet) {
+  //  min-width: $tablet-width - 30;
+  //}
+}
+
+.container {
+  //margin: 0 auto;
+  @include outer-container;
+
+  padding: 0 15px;
+  min-width: $max-width;
+
+  //@include media($mobile) {
+  //  width: 100%;
+  //  min-width: $mobile-width;
+  //  padding: 0 5px;
+  //  box-sizing: border-box;
+  //}
+  //@include media($tablet) {
+  //  width: 100%;
+  //  min-width: $tablet-width;
+  //  padding: 0 10px;
+  //  box-sizing: border-box;
+  //}
+}
+
+a {
+  text-decoration: none;
+  color: #0071bc;
+
+  &:hover {
+    text-decoration: underline;
+    color: #205493;
+  }
+}
+
+h1, h2, h3 {
+  @extend %super-font;
+}
+

@@ -1,0 +1,54 @@
+.form {
+  input.string, textarea {
+    border: 1px solid #ddd;
+    border-top-color: #ccc;
+    padding: 5px 10px;
+  }
+
+  input, textarea {
+    &:focus {
+      box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+    }
+  }
+
+  .field_with_errors {
+    input {
+      border: 3px solid #cd2026;
+    }
+    .error {
+      display: block;
+      margin-top: 3px;
+      color: #cd2026;
+    }
+  }
+
+  &--standard {
+    label {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 16px;
+
+      abbr {
+        color: #981b1e;
+      }
+    }
+
+    .input {
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    textarea {
+      width: 100%;
+    }
+
+    .btn {
+      @extend .buttons;
+      @extend .buttons--common;
+      border: 0;
+    }
+  }
+}

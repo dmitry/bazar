@@ -1,0 +1,17 @@
+.enquiry
+  - if enquiry.persisted?
+    .alerts.alerts--success
+      .alerts__header
+        = t('.sent_header')
+      .alerts__description
+        = t('.sent_description')
+  - else
+    h3.enquiry__header
+      = t('.header')
+
+    = simple_form_for enquiry, url: item_enquiry_path(enquiry.item), remote: true, html: {class: 'form form--standard'} do |f|
+      = f.input :name
+      = f.input :email
+      = f.input :phone
+      = f.input :message, input_html: {rows: 3}
+      = f.button :submit, 'data-disable-with' => t('common.please_wait')

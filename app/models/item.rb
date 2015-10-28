@@ -4,6 +4,7 @@ class Item < ActiveRecord::Base
   belongs_to :condition
 
   has_many :photos, dependent: :destroy
+  has_many :enquiries, dependent: :destroy
 
   has_translations :name, :description
   accepts_nested_attributes_for :translations
@@ -22,7 +23,7 @@ class Item < ActiveRecord::Base
 
   scope :recent, -> { order('created_at DESC') }
 
-  def general_photo
+  def main_photo
     photos.first || Photo.new
   end
 end

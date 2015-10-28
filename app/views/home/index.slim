@@ -1,9 +1,13 @@
 .container
+  .home
+    h1.home__header
+      | Tenerife Bazar
+
   ul.items
-    - @items.each do |item|
-      li.items__item
+    - @items.each_with_index do |item, index|
+      li.items__item{class=('items__item--first' if index.zero?)}
         = link_to item, class: 'items__item__photo' do
-          = image_tag item.general_photo.file.url(:small), class: 'items__item__photo__image'
+          = image_tag item.main_photo.file.url(:small), class: 'items__item__photo__image'
 
         .items__item__primary
           = link_to item, class: 'items__item__primary__name' do

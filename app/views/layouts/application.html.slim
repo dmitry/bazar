@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Bazar
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    | <link href='https://fonts.googleapis.com/css?family=Russo+One|Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+  body
+    = render 'trackers/google_analytics'
+
+    = render 'layouts/application/header'
+    = yield

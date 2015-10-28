@@ -72,6 +72,8 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-db-tasks (0.4)
+      capistrano (>= 3.0.0)
     capistrano-passenger (0.1.1)
       capistrano (~> 3.0)
     capistrano-rails (1.1.5)
@@ -110,6 +112,8 @@ GEM
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
+    email_validator (1.6.0)
+      activemodel
     erubis (2.7.0)
     eventmachine (1.0.8)
     execjs (2.6.0)
@@ -165,6 +169,7 @@ GEM
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.9)
+    magnific-popup-rails (0.9.9.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
@@ -174,6 +179,9 @@ GEM
     minitest (5.8.1)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -254,6 +262,9 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     shellany (0.0.1)
+    simple_form (3.2.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -308,7 +319,9 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  bourbon
   byebug
+  capistrano-db-tasks
   capistrano-passenger
   capistrano-rails
   capistrano-rvm
@@ -316,15 +329,19 @@ DEPENDENCIES
   devise
   devise-i18n
   draper
+  email_validator
   guard-livereload (~> 2.4)
   has_translations
   jquery-rails
+  magnific-popup-rails
+  neat
   paper_trail
   paperclip
   quiet_assets
   rails (= 4.2.4)
   rails-i18n
   sass-rails (~> 5.0)
+  simple_form
   slim-rails
   spring
   sqlite3

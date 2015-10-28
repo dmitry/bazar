@@ -1,0 +1,40 @@
+.buttons {
+  @extend %super-font;
+  text-align: center;
+  line-height: 36px;
+  margin: 7px 0;
+  padding: 0 15px;
+  color: #fff;
+  display: block;
+  border-radius: 2px;
+  font-size: 17px;
+  font-weight: bold;
+
+  &--main {
+    background: #e31c3d;
+
+    &:hover {
+      background: #cd2026;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:active {
+      background: #981b1e;
+    }
+  }
+
+  &--common {
+    background: #0071bc;
+
+    &:hover {
+      background: #205493;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &:active {
+      background: #112e51;
+    }
+  }
+}
