@@ -1,2 +1,3 @@
-= render 'trackers/google_analytics'
-= render 'trackers/yandex_metrika'
+- if Rails.env.production?
+  = render 'trackers/google_analytics'
+  = render 'trackers/yandex_metrika'
