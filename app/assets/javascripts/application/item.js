@@ -25,7 +25,7 @@ var initialize = function() {
         $('.item__photos').magnificPopup('open');
       });
     } else {
-      $('.item__photos__photo').magnificPopup({
+      $('.item__photo').magnificPopup({
         type: 'image',
         zoom: {
           enabled: true
