@@ -2,13 +2,15 @@ doctype html
 html
   head
     title Bazar
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
 
-    | <link href='https://fonts.googleapis.com/css?family=Russo+One|Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+    | <link href='https://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+    | <link href='https://fonts.googleapis.com/css?family=Roboto:400,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   body
     = render 'trackers/base'
 
     = render 'layouts/application/header'
     = yield
+
+    = javascript_include_tag 'application'

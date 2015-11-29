@@ -4,10 +4,15 @@ header.header
       | Tenerife
       span.header__logo__last r.com
 
-
-
-    = link_to '#', class: 'header__advert' do
+    = link_to new_item_path, class: 'header__advert' do
       = t('.sell')
       span.header__advert__free
         span.header__advert__free__text
           = t('.for_free')
+
+
+    .header__languages
+      ul
+        - Constants.languages.each_with_index do |(locale, name), index|
+          li(class=('first' if index.zero?))
+            = link_to name, url_for(locale: locale, from_locale: I18n.locale)

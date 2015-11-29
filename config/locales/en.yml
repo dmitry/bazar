@@ -6,6 +6,11 @@ en:
         email: E-mail
         phone: Phone number
         message: Message
+      item:
+        price:  Price
+      item_translation:
+        name: Name
+        description: Description
   helpers:
     submit:
       enquiry:
@@ -26,8 +31,21 @@ en:
       mark: '*'
     error_notification:
       default_message: "Please review the problems below:"
+    hints:
+      item:
+        price: Price of the item should be EUR
+        condition_id: Choose a condition matches to your item
+        category_id: Choose a specific category
+        translations:
+          name: Main item information
+          description: Provide as many information as possible
   layouts:
     application:
       header:
         sell: Sell your item
         for_free: For free
+  components:
+    image_uploader:
+      delete: Delete
+      choose_photos: Choose photos
+      drag_text: or drag them with mouse here

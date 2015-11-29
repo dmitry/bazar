@@ -1,4 +1,4 @@
-class EnquiriesController < ApplicationController
+class EnquiriesController < BaseController
   before_filter :load_item
 
   def create

@@ -1,0 +1,44 @@
+.container
+  .sell
+    = simple_form_for @item, url: items_path, html: {class: 'form form--horizontal'} do |f|
+      .segment
+        h3.segment__header
+          | Photos
+        .segment__body
+          - props = {url: photos_path, images: ActiveModel::ArraySerializer.new(@item.photos, each_serializer: PhotoSerializer)}
+          = react_component 'ImageUploader', props, prerender: true
+
+      - Constants.sort_languages(f.object.item.all_translations).each_with_index do |(locale, translation), index|
+        = f.simple_fields_for 'translations_attributes[]', translation do |ft|
+          - translation_class_names = []
+          - translation_class_names << 'segment--hidden' if !index.zero? && translation.empty?
+          - locales_count = I18n.available_locales.count - 1
+          - translation_class_names << 'segment--stackable' if index < locales_count
+          .segment(class=translation_class_names)
+            h3.segment__header
+              = Constants::LANGUAGES[locale]
+              - unless index.zero?
+                = link_to t('.add_translation'), '#', class: 'segment__header__link', 'data-segment-toggler': 2
+
+            .segment__body
+              = ft.input :locale, as: :hidden
+              = ft.input :name, required: index.zero?
+              = ft.input :description, required: index.zero?, as: :text, input_html: {rows: 3}
+
+      .segment
+        h3.segment__header
+          | Details
+        .segment__body
+          = f.input :price, required: true
+          = f.input :condition_id, required: true, as: :select, collection: Condition.includes(:translations).map { |v| [v.name, v.id] }
+          = f.input :category_id, required: true, as: :select, collection: Category.includes(:translations).map { |v| [v.name, v.id] }
+
+      .segment
+        h3.segment__header
+          | Your contacts
+        .segment__body
+          = f.input :name, required: true
+          = f.input :email, required: true
+          = f.input :phone
+
+      = f.button :submit, 'data-disable-with' => t('common.please_wait')

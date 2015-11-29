@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028111300) do
+ActiveRecord::Schema.define(version: 20151115122223) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -50,10 +50,11 @@ ActiveRecord::Schema.define(version: 20151028111300) do
   end
 
   create_table "item_translations", force: :cascade do |t|
-    t.integer "item_id",               null: false
-    t.string  "locale",      limit: 2, null: false
-    t.string  "name",                  null: false
-    t.text    "description",           null: false
+    t.integer "item_id",                           null: false
+    t.string  "locale",      limit: 2,             null: false
+    t.string  "name",                              null: false
+    t.text    "description",                       null: false
+    t.integer "source_cd",             default: 0, null: false
   end
 
   add_index "item_translations", ["item_id", "locale"], name: "index_item_translations_on_item_id_and_locale", unique: true
@@ -91,6 +92,8 @@ ActiveRecord::Schema.define(version: 20151028111300) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "is_admin",               default: false, null: false
+    t.string   "name",                   default: "",    null: false
+    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

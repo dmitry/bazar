@@ -6,7 +6,7 @@
   ul.items
     - @items.each_with_index do |item, index|
       li.items__item{class=('items__item--first' if index.zero?)}
-        = link_to item, class: 'items__item__photo' do
+        = link_to item_path(item), class: 'items__item__photo' do
           = image_tag item.main_photo.file.url(:small), class: 'items__item__photo__image'
 
         .items__item__primary
