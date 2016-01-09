@@ -1,4 +1,4 @@
-var initialize = function() {
+$(function() {
   var root = $('.item');
 
   if (root.length) {
@@ -35,7 +35,4 @@ var initialize = function() {
       });
     }
   }
-};
-
-$(initialize);
-$(document).on('page:load', initialize);
+});

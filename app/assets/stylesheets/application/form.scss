@@ -1,8 +1,22 @@
 .form {
-  input.string, textarea {
+  label {
+    font-size: 16px;
+
+    abbr {
+      color: #981b1e;
+    }
+  }
+
+  input.string, input.numeric, textarea, select {
     border: 1px solid #ddd;
     border-top-color: #ccc;
     padding: 5px 10px;
+    background: #fff;
+
+    &:hover {
+      border: 1px solid #bbb;
+      border-top-color: #aaa;
+    }
   }
 
   input, textarea {
@@ -11,9 +25,18 @@
     }
   }
 
+  .input {
+    &.integer, &.string, &.tel, &.email, &.select, &.text {
+      margin-bottom: 10px;
+    }
+  }
+
   .field_with_errors {
-    input {
-      border: 3px solid #cd2026;
+    input, textarea, select {
+      border: 2px solid #cd2026;
+      &:hover {
+        border: 2px solid #cd2026;
+      }
     }
     .error {
       display: block;
@@ -26,15 +49,6 @@
     label {
       display: block;
       margin-bottom: 2px;
-      font-size: 16px;
-
-      abbr {
-        color: #981b1e;
-      }
-    }
-
-    .input {
-      margin-bottom: 10px;
     }
 
     input {
@@ -44,11 +58,43 @@
     textarea {
       width: 100%;
     }
+  }
 
-    .btn {
-      @extend .buttons;
-      @extend .buttons--common;
-      border: 0;
+  &--horizontal {
+    label {
+      display: block;
+      float: left;
+      width: 150px;
+      line-height: 30px;
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    input {
+      &.string, &.numeric {
+        width: 50%;
+      }
+    }
+
+    textarea {
+      width: 50%;
+    }
+
+    select {
+      width: 50%;
+    }
+
+    .error {
+      margin-left: 150px;
+    }
+
+    .hint {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 20px;
+      font-size: 15px;
+      color: #888;
+      padding-top: 7px;
     }
   }
 }
