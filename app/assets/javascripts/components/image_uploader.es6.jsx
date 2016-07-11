@@ -131,7 +131,7 @@ class ImageUploader extends React.Component {
               files: {'file': files},
               fileprogress: (evt, file) => {
                 var id = FileAPI.uid(file);
-                var percentage = evt.loaded / evt.total * 100;
+                var percentage = Math.round(evt.loaded / evt.total * 100);
 
                 // TODO use http://facebook.github.io/immutable-js/
                 var item = _.find(this.state.images, (image) => { return id === image.id });

@@ -12,7 +12,9 @@ module Items
       end
     end
 
-    array :photos_ids, default: nil
+    array :photos_ids, default: nil do
+      string
+    end
 
     string :price
     string :category_id
@@ -28,7 +30,7 @@ module Items
 
     def photos
       if photos_ids
-        Photo.where(id: photos_ids)
+        Photo.where(item_id: nil, id: photos_ids)
       else
         item.photos
       end
@@ -41,6 +43,7 @@ module Items
 
         item.assign_attributes(item_params)
         item.user = user
+        item.photos = photos
 
         unless item.save
           errors.merge!(user.errors)
