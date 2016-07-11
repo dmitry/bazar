@@ -1,6 +1,6 @@
 require 'capistrano-db-tasks'
 
-lock '3.4.0'
+lock '3.5.0'
 
 set :application, 'dmitry'
 set :repo_url, 'git@github.com:dmitry/bazar.git'
